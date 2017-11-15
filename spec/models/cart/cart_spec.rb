@@ -1,5 +1,3 @@
-# require 'rails_helper'
-
 module Cart
   RSpec.describe Cart, type: :model do
     let(:cart) { build :cart_cart }

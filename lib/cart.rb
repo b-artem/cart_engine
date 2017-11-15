@@ -1,5 +1,5 @@
-require "cart/engine"
+require 'cart/engine'
 
 module Cart
-  # Your code goes here...
+  mattr_accessor :product_class
 end
