@@ -1,1 +1,1 @@
-# Cart.product_class = 'Book'
+Cart.product_class = 'Book'

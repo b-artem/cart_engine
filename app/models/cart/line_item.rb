@@ -1,6 +1,6 @@
 module Cart
   class LineItem < ApplicationRecord
-    belongs_to :product
+    belongs_to :product, class_name: Cart.product_class.to_s
     belongs_to :cart, optional: true
     belongs_to :order, optional: true
 

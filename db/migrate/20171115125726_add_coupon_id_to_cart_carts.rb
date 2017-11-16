@@ -1,5 +1,6 @@
 class AddCouponIdToCartCarts < ActiveRecord::Migration[5.1]
   def change
-    add_reference :cart_carts, :cart_coupon, foreign_key: true
+    add_column :cart_carts, :coupon_id, :integer
   end
+  add_index :cart_carts, :coupon_id
 end

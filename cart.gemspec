@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "cart"
   s.version     = Cart::VERSION
   s.authors     = ["b-artem"]
-  s.email       = ["artemb.dev@gmail.com"]
+  s.email       = ["artem@example.com"]
   s.homepage    = "https://github.com/b-artem/cart_engine"
   s.summary     = "Shopping cart and checkout flow"
   s.description = "Adds shopping cart and checkout flow to an app"

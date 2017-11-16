@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115125726) do
+ActiveRecord::Schema.define(version: 20171116123655) do
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.decimal "price", precision: 7, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cart_addresses", force: :cascade do |t|
     t.string "type"
@@ -33,8 +40,8 @@ ActiveRecord::Schema.define(version: 20171115125726) do
   create_table "cart_carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cart_coupon_id"
-    t.index ["cart_coupon_id"], name: "index_cart_carts_on_cart_coupon_id"
+    t.integer "coupon_id"
+    t.index ["coupon_id"], name: "index_cart_carts_on_coupon_id"
   end
 
   create_table "cart_coupons", force: :cascade do |t|
@@ -65,9 +72,9 @@ ActiveRecord::Schema.define(version: 20171115125726) do
     t.boolean "use_billing_address_as_shipping", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cart_coupon_id"
-    t.index ["cart_coupon_id"], name: "index_cart_orders_on_cart_coupon_id"
+    t.integer "coupon_id"
     t.index ["cart_shipping_method_id"], name: "index_cart_orders_on_cart_shipping_method_id"
+    t.index ["coupon_id"], name: "index_cart_orders_on_coupon_id"
     t.index ["number"], name: "index_cart_orders_on_number"
     t.index ["user_id"], name: "index_cart_orders_on_user_id"
   end
