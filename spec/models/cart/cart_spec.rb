@@ -8,8 +8,10 @@ module Cart
       expect(cart).to be_valid
     end
 
-    describe 'Associations', pending: 'have to do smth. with shoulda-matchers' do
-      it { is_expected.to have_many(:line_items).dependent(:destroy) }
+    describe 'Associations' do
+      it 'has_many :line_items' do
+        expect(cart).to have_many(:line_items).dependent(:destroy)
+      end
     end
 
     describe 'Instance methods' do

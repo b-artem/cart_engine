@@ -18,11 +18,15 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency 'aasm', '~> 4.12', '>= 4.12.3'
+  s.add_dependency 'devise', '~> 4.3'
   s.add_dependency 'rails', '~> 5.1.4'
+  s.add_dependency 'rectify', '~> 0.10.0'
 
   s.add_development_dependency 'capybara', '~> 2.15', '>= 2.15.4'
   s.add_development_dependency 'database_cleaner', '~> 1.6', '>= 1.6.2'
   s.add_development_dependency 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
+  s.add_development_dependency 'faker', '~> 1.8', '>= 1.8.4'
+  s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'rspec-rails', '~> 3.7', '>= 3.7.1'
   s.add_development_dependency 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
   s.add_development_dependency 'sqlite3'

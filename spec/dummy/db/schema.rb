@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116123655) do
+ActiveRecord::Schema.define(version: 20171117101806) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20171116123655) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cart_order_id"
-    t.index ["cart_order_id"], name: "index_cart_addresses_on_cart_order_id"
+    t.integer "order_id"
+    t.index ["order_id"], name: "index_cart_addresses_on_order_id"
     t.index ["type"], name: "index_cart_addresses_on_type"
     t.index ["user_id"], name: "index_cart_addresses_on_user_id"
   end
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20171116123655) do
     t.decimal "price", precision: 7, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "cart_order_id"
-    t.index ["cart_order_id"], name: "index_cart_line_items_on_cart_order_id"
+    t.integer "order_id"
+    t.index ["order_id"], name: "index_cart_line_items_on_order_id"
   end
 
   create_table "cart_orders", force: :cascade do |t|
@@ -68,14 +68,14 @@ ActiveRecord::Schema.define(version: 20171116123655) do
     t.datetime "completed_at"
     t.string "state"
     t.integer "user_id"
-    t.integer "cart_shipping_method_id"
+    t.integer "shipping_method_id"
     t.boolean "use_billing_address_as_shipping", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "coupon_id"
-    t.index ["cart_shipping_method_id"], name: "index_cart_orders_on_cart_shipping_method_id"
     t.index ["coupon_id"], name: "index_cart_orders_on_coupon_id"
     t.index ["number"], name: "index_cart_orders_on_number"
+    t.index ["shipping_method_id"], name: "index_cart_orders_on_shipping_method_id"
     t.index ["user_id"], name: "index_cart_orders_on_user_id"
   end
 
@@ -84,6 +84,12 @@ ActiveRecord::Schema.define(version: 20171116123655) do
     t.integer "days_min"
     t.integer "days_max"
     t.decimal "price", precision: 7, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

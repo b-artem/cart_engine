@@ -9,9 +9,10 @@ class CreateCartAddresses < ActiveRecord::Migration[5.1]
       t.string :zip
       t.string :country
       t.string :phone
-      t.references :user, foreign_key: true
+      t.integer :user_id
       t.timestamps
     end
     add_index :cart_addresses, :type
+    add_index :cart_addresses, :user_id
   end
 end

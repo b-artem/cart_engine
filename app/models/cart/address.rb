@@ -1,6 +1,6 @@
 module Cart
   class Address < ApplicationRecord
-    belongs_to :user, optional: true
+    belongs_to :user, class_name: Cart.user_class.to_s, optional: true
     belongs_to :order, optional: true
 
     validates :type, inclusion: { in: %w(BillingAddress ShippingAddress),

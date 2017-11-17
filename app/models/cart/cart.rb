@@ -2,7 +2,7 @@ require_relative 'concerns/validations'
 
 module Cart
   class Cart < ApplicationRecord
-    include Validations
+    include Concerns::Validations
     belongs_to :coupon, optional: true
     has_many :line_items, dependent: :destroy
 

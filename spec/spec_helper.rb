@@ -20,6 +20,7 @@ require File.expand_path('../dummy/config/environment.rb', __FILE__)
 
 require 'factory_bot_rails'
 require 'support/factory_bot'
+require 'faker'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

@@ -3,7 +3,7 @@ module Cart
     include AASM
 
     belongs_to :user
-    belongs_to :cart_shipping_method, optional: true
+    belongs_to :shipping_method, optional: true
     belongs_to :coupon, optional: true
     has_one :billing_address, dependent: :destroy
     has_one :shipping_address, dependent: :destroy

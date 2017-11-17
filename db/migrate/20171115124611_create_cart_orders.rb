@@ -5,10 +5,11 @@ class CreateCartOrders < ActiveRecord::Migration[5.1]
       t.datetime :completed_at
       t.string :state
       t.references :user, foreign_key: true
-      t.references :cart_shipping_method, foreign_key: true
+      t.integer :shipping_method_id
       t.boolean :use_billing_address_as_shipping, default: false
       t.timestamps
     end
     add_index :cart_orders, :number
+    add_index :cart_orders, :shipping_method_id
   end
 end
