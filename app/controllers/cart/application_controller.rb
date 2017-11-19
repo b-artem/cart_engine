@@ -1,7 +1,10 @@
 module Cart
   class ApplicationController < ::ApplicationController
-    require_relative 'concerns/controllers/application_controller'
     include Cart::Concerns::Controllers::ApplicationController
     protect_from_forgery with: :exception
+
+    def current_ability
+      @current_ability ||= Ability.new(current_user, session)
+    end
   end
 end
