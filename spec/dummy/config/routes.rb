@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  mount Cart::Engine => "/cart"
-  root to: "cart#show"
+  mount ShoppingCart::Engine => "/shopping_cart"
+  root to: "shopping_cart/carts#show"
 end

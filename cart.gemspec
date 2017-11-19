@@ -1,12 +1,12 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "cart/version"
+require "shopping_cart/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "cart"
-  s.version     = Cart::VERSION
+  s.name        = "shopping-cart"
+  s.version     = ShoppingCart::VERSION
   s.authors     = ["b-artem"]
   s.email       = ["artem@example.com"]
   s.homepage    = "https://github.com/b-artem/cart_engine"

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cart (0.1.0)
+    shopping-cart (0.1.0)
       aasm (~> 4.12, >= 4.12.3)
       cancancan (~> 2.1, >= 2.1.1)
       devise (~> 4.3)
@@ -222,12 +222,12 @@ PLATFORMS
 
 DEPENDENCIES
   capybara (~> 2.15, >= 2.15.4)
-  cart!
   database_cleaner (~> 1.6, >= 1.6.2)
   factory_bot_rails (~> 4.8, >= 4.8.2)
   faker (~> 1.8, >= 1.8.4)
   pry-rails
   rspec-rails (~> 3.7, >= 3.7.1)
+  shopping-cart!
   shoulda-matchers (~> 3.1, >= 3.1.2)
   sqlite3
 

@@ -1,4 +1,4 @@
-# Cart
+# Shopping Cart
 Short description and motivation.
 
 ## Usage
@@ -7,21 +7,21 @@ and products.
 User should implement #email method.
 Product should implement #title and #price methods.
 You can name these classes whatever you want, although you need to define
-user_class and product_class in `app/config/initializers/cart.rb`, e.g.:
+user_class and product_class in `app/config/initializers/shopping_cart.rb`, e.g.:
 ```ruby
-Cart.product_class = 'Book'
-Cart.user_class = 'User'
+ShoppingCart.product_class = 'Book'
+ShoppingCart.user_class = 'User'
 ```
 Include the following line in your `application_controller.rb`:
 ```ruby
-include Cart::Concerns::Controllers::ApplicationController
+include ShoppingCart::Concerns::Controllers::ApplicationController
 ```
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cart'
+gem 'shopping_cart'
 ```
 
 And then execute:
@@ -31,7 +31,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install cart
+$ gem install shopping_cart
 ```
 
 ## Contributing

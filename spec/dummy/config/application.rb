@@ -11,7 +11,7 @@ require "action_cable/engine"
 require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
-require "cart"
+require "shopping_cart"
 
 module Dummy
   class Application < Rails::Application
@@ -23,4 +23,3 @@ module Dummy
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-

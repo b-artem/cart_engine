@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20171119124954) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cart_addresses", force: :cascade do |t|
+  create_table "shopping_cart_addresses", force: :cascade do |t|
     t.string "type"
     t.string "first_name"
     t.string "last_name"
@@ -32,19 +32,19 @@ ActiveRecord::Schema.define(version: 20171119124954) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "order_id"
-    t.index ["order_id"], name: "index_cart_addresses_on_order_id"
-    t.index ["type"], name: "index_cart_addresses_on_type"
-    t.index ["user_id"], name: "index_cart_addresses_on_user_id"
+    t.index ["order_id"], name: "index_shopping_cart_addresses_on_order_id"
+    t.index ["type"], name: "index_shopping_cart_addresses_on_type"
+    t.index ["user_id"], name: "index_shopping_cart_addresses_on_user_id"
   end
 
-  create_table "cart_carts", force: :cascade do |t|
+  create_table "shopping_cart_carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "coupon_id"
-    t.index ["coupon_id"], name: "index_cart_carts_on_coupon_id"
+    t.index ["coupon_id"], name: "index_shopping_cart_carts_on_coupon_id"
   end
 
-  create_table "cart_coupons", force: :cascade do |t|
+  create_table "shopping_cart_coupons", force: :cascade do |t|
     t.string "code"
     t.decimal "discount", precision: 4, scale: 1
     t.date "valid_until"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20171119124954) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cart_line_items", force: :cascade do |t|
+  create_table "shopping_cart_line_items", force: :cascade do |t|
     t.integer "product_id"
     t.integer "cart_id"
     t.integer "quantity", default: 1
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(version: 20171119124954) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "order_id"
-    t.index ["order_id"], name: "index_cart_line_items_on_order_id"
+    t.index ["order_id"], name: "index_shopping_cart_line_items_on_order_id"
   end
 
-  create_table "cart_orders", force: :cascade do |t|
+  create_table "shopping_cart_orders", force: :cascade do |t|
     t.string "number"
     t.datetime "completed_at"
     t.string "state"
@@ -73,13 +73,13 @@ ActiveRecord::Schema.define(version: 20171119124954) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "coupon_id"
-    t.index ["coupon_id"], name: "index_cart_orders_on_coupon_id"
-    t.index ["number"], name: "index_cart_orders_on_number"
-    t.index ["shipping_method_id"], name: "index_cart_orders_on_shipping_method_id"
-    t.index ["user_id"], name: "index_cart_orders_on_user_id"
+    t.index ["coupon_id"], name: "index_shopping_cart_orders_on_coupon_id"
+    t.index ["number"], name: "index_shopping_cart_orders_on_number"
+    t.index ["shipping_method_id"], name: "index_shopping_cart_orders_on_shipping_method_id"
+    t.index ["user_id"], name: "index_shopping_cart_orders_on_user_id"
   end
 
-  create_table "cart_shipping_methods", force: :cascade do |t|
+  create_table "shopping_cart_shipping_methods", force: :cascade do |t|
     t.string "name"
     t.integer "days_min"
     t.integer "days_max"
