@@ -18,7 +18,9 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency 'aasm', '~> 4.12', '>= 4.12.3'
+  s.add_dependency 'cancancan', '~> 2.1', '>= 2.1.1'
   s.add_dependency 'devise', '~> 4.3'
+  s.add_dependency 'haml-rails', '~> 1.0'
   s.add_dependency 'rails', '~> 5.1.4'
   s.add_dependency 'rectify', '~> 0.10.0'
 

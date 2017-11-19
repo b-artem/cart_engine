@@ -1,5 +1,7 @@
 module Cart
-  class ApplicationController < ActionController::Base
+  class ApplicationController < ::ApplicationController
+    require_relative 'concerns/controllers/application_controller'
+    include Cart::Concerns::Controllers::ApplicationController
     protect_from_forgery with: :exception
   end
 end

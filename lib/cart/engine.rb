@@ -1,4 +1,6 @@
 require 'aasm'
+require 'cancancan'
+require 'devise'
 
 module Cart
   class Engine < ::Rails::Engine
