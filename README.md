@@ -16,6 +16,10 @@ Include the following line in your `application_controller.rb`:
 ```ruby
 include ShoppingCart::Concerns::Controllers::ApplicationController
 ```
+Include the following line in your user model, e.g. `user.rb`:
+```ruby
+include ShoppingCart::Concerns::Models::User
+```
 
 ## Installation
 Add this line to your application's Gemfile:

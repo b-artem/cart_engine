@@ -3,6 +3,7 @@ require 'cancancan'
 require 'devise'
 require 'haml-rails'
 require 'pry'
+require_relative '../../app/models/shopping_cart/concerns/user'
 
 module ShoppingCart
   class Engine < ::Rails::Engine
