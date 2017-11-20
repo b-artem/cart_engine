@@ -2,6 +2,7 @@ require 'aasm'
 require 'cancancan'
 require 'devise'
 require 'haml-rails'
+require 'pry'
 
 module ShoppingCart
   class Engine < ::Rails::Engine

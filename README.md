@@ -21,7 +21,7 @@ include ShoppingCart::Concerns::Controllers::ApplicationController
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'shopping_cart'
+gem 'shopping-cart'
 ```
 
 And then execute:
@@ -31,7 +31,7 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install shopping_cart
+$ gem install shopping-cart
 ```
 
 ## Contributing
