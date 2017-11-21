@@ -2,7 +2,8 @@ require 'aasm'
 require 'cancancan'
 require 'devise'
 require 'haml-rails'
-require 'pry'
+# require 'pry'
+require 'wicked'
 require_relative '../../app/models/shopping_cart/concerns/user'
 
 module ShoppingCart
