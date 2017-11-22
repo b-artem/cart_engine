@@ -21,9 +21,12 @@ Gem::Specification.new do |s|
   s.add_dependency 'cancancan', '~> 2.1', '>= 2.1.1'
   s.add_dependency 'coffee-rails', '~> 4.2', '>= 4.2.2'
   s.add_dependency 'devise', '~> 4.3'
+  s.add_dependency 'draper', '~> 3.0', '>= 3.0.1'
   s.add_dependency 'haml-rails', '~> 1.0'
   s.add_dependency 'rails', '~> 5.1.4'
   s.add_dependency 'rectify', '~> 0.10.0'
+  s.add_dependency 'sass-rails', '~> 5.0'
+  s.add_dependency 'simple_form', '~> 3.5'
   s.add_dependency 'turbolinks', '~> 5.0', '>= 5.0.1'
   s.add_dependency 'wicked', '~> 1.3', '>= 1.3.2'
 

@@ -32,6 +32,7 @@ module ShoppingCart
 
     context 'when product quantity = 1', js: true do
       let(:line_item) { create(:shopping_cart_line_item, cart: ShoppingCart::Cart.last, product: product) }
+      binding.pry
       background { visit shopping_cart.cart_path(line_item.cart) }
 
       context "user clicks '+' button" do
@@ -97,9 +98,9 @@ module ShoppingCart
 
   feature 'Cart' do
     feature 'Edit' do
-      context 'when user is a guest' do
-        include_examples 'changes quantity'
-      end
+      # context 'when user is a guest' do
+      #   include_examples 'changes quantity'
+      # end
 
       context 'when user is logged in' do
         let(:user) { create(:user) }
