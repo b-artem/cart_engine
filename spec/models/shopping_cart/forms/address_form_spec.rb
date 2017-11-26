@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 module ShoppingCart
   module Forms
     RSpec.describe AddressForm, type: :model do

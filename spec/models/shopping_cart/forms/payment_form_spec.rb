@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 module ShoppingCart
   module Forms
     RSpec.describe PaymentForm, type: :model do
@@ -15,25 +17,25 @@ module ShoppingCart
 
         it { is_expected.to allow_value('1234567812345678').for(:card_number) }
         it { is_expected.not_to allow_value('1234-5678-1234-5678').for(:card_number)
-                                .with_message('Only allows 0-9') }
+              .with_message(I18n.t('shopping_cart.models.forms.payment_form.card_number_symbols')) }
         it { is_expected.not_to allow_value('1234 5678 1234 5678').for(:card_number)
-                                .with_message('Only allows 0-9') }
+              .with_message(I18n.t('shopping_cart.models.forms.payment_form.card_number_symbols')) }
 
         it { is_expected.to allow_value('Elon Musk').for(:name_on_card) }
         it { is_expected.not_to allow_value('Elon-Musk').for(:name_on_card)
-                                .with_message('Only allows letters and spaces') }
+              .with_message(I18n.t('shopping_cart.models.forms.payment_form.name_on_card_symbols')) }
         it { is_expected.to validate_length_of(:name_on_card).is_at_most(49) }
 
         it { is_expected.to allow_value(Date.today.strftime('%m/%y').to_s).for(:valid_until) }
         it { is_expected.to allow_value("12/25").for(:valid_until) }
         it { is_expected.not_to allow_value((Date.today - 1.months).strftime('%m/%y').to_s)
-                                .for(:valid_until).with_message('Invalid term') }
+              .for(:valid_until).with_message('Invalid term') }
         it { is_expected.not_to allow_value("12/2025").for(:valid_until)
-                                .with_message('Invalid term') }
+              .with_message(I18n.t('shopping_cart.models.payment.invalid_term')) }
         it { is_expected.not_to allow_value("12-25").for(:valid_until)
-                                .with_message('Invalid term') }
+              .with_message(I18n.t('shopping_cart.models.payment.invalid_term')) }
         it { is_expected.not_to allow_value("1225").for(:valid_until)
-                                .with_message('Invalid term') }
+              .with_message(I18n.t('shopping_cart.models.payment.invalid_term')) }
 
         it { is_expected.to allow_value('123').for(:cvv) }
         it { is_expected.to allow_value("1234").for(:cvv) }
