@@ -15,6 +15,12 @@ module ShoppingCart
   class Engine < ::Rails::Engine
     isolate_namespace ShoppingCart
 
+    config.to_prepare do
+      Dir.glob(Engine.root + 'app/decorators/**/*_decorator*.rb').each do |c|
+        require_dependency(c)
+      end
+    end
+
     config.generators do |g|
       g.test_framework :rspec, fixture: false
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
