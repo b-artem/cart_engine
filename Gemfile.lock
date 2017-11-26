@@ -168,6 +168,9 @@ GEM
     rack (2.0.3)
     rack-test (0.8.0)
       rack (>= 1.0, < 3)
+    rack_session_access (0.1.1)
+      builder (>= 2.0.0)
+      rack (>= 1.0.0)
     rails (5.1.4)
       actioncable (= 5.1.4)
       actionmailer (= 5.1.4)
@@ -288,6 +291,7 @@ DEPENDENCIES
   factory_bot_rails (~> 4.8, >= 4.8.2)
   faker (~> 1.8, >= 1.8.4)
   pry-rails (~> 0.3.6)
+  rack_session_access (~> 0.1.1)
   rspec-rails (~> 3.7, >= 3.7.1)
   selenium-webdriver (~> 3.7)
   shopping-cart!
