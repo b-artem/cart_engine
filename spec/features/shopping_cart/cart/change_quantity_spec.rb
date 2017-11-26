@@ -4,7 +4,6 @@ require 'support/devise'
 
 module ShoppingCart
   shared_examples 'changes quantity' do
-
     before :all do
       RSpec.configure do |config|
         config.mock_with :rspec do |mocks|
@@ -23,7 +22,6 @@ module ShoppingCart
 
     let(:product) { create :product }
     background do
-      # allow(Book).to receive(:best_seller).and_return(product)
       allow_any_instance_of(ShoppingCart.product_class)
         .to receive_message_chain('images.[].image_url.file.url')
         .and_return("https://example.com/image.jpg")
