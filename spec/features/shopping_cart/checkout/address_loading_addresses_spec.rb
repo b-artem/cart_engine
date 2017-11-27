@@ -86,8 +86,7 @@ module ShoppingCart
     context 'when user has filled only Billing Address in Settings page' do
       let(:billing_address) { create :shopping_cart_billing_address }
       background do
-        user.update_attributes(billing_address: billing_address)
-        binding.pry
+        user.billing_address = billing_address
         visit shopping_cart.order_checkout_index_path(order)
       end
 
