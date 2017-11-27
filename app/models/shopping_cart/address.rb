@@ -4,6 +4,6 @@ module ShoppingCart
     belongs_to :order, optional: true
 
     validates :type, inclusion: { in: %w(BillingAddress ShippingAddress),
-      message: I18n.t('models.address.invalid_type', value: "%{value}" ) }
+      message: I18n.t('shopping_cart.models.address.invalid_type', value: "%{value}" ) }
   end
 end
