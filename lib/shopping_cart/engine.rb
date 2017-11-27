@@ -1,6 +1,7 @@
 require 'aasm'
 require 'cancancan'
 require 'coffee-rails'
+require 'country_select'
 require 'devise'
 require 'draper'
 require 'haml-rails'

@@ -1,13 +1,14 @@
 require_dependency "shopping_cart/application_controller"
+require_relative '../concerns/controllers/current_order'
 
 module ShoppingCart
   class Orders::CheckoutController < ApplicationController
     include Wicked::Wizard
-    include CurrentOrder
+    include ShoppingCart::Concerns::Controllers::CurrentOrder
 
     before_action :authenticate_user!
-    authorize_resource(Order)
-    authorize_resource(Address)
+    authorize_resource class: 'ShoppingCart::Order'
+    authorize_resource class: 'ShoppingCart::Address'
     steps :address, :delivery, :payment, :confirm, :complete
 
     def show

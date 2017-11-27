@@ -6,8 +6,8 @@ module ShoppingCart::Concerns::Controllers::CurrentOrder
     end
 
     def current_order
-      Order.uncached do
-        Order.find(session[:order_id])
+      ShoppingCart::Order.uncached do
+        ShoppingCart::Order.find(session[:order_id])
       end
     rescue ActiveRecord::RecordNotFound
       flash[:alert] = t('order_was_not_found', order_id: session[:order_id])

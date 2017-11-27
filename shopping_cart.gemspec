@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'aasm', '~> 4.12', '>= 4.12.3'
   s.add_dependency 'cancancan', '~> 2.1', '>= 2.1.1'
   s.add_dependency 'coffee-rails', '~> 4.2', '>= 4.2.2'
+  s.add_dependency 'country_select', '~> 3.1'
   s.add_dependency 'devise', '~> 4.3'
   s.add_dependency 'draper', '~> 3.0', '>= 3.0.1'
   s.add_dependency 'haml-rails', '~> 1.0'
