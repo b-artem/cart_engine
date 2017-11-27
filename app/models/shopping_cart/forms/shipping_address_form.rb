@@ -3,7 +3,7 @@ module ShoppingCart
     class ShippingAddressForm < AddressForm
       def initialize(*args)
         super(*args)
-        @type = 'ShippingAddress'
+        @type = 'ShoppingCart::ShippingAddress'
       end
     end
   end

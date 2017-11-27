@@ -15,7 +15,7 @@ module ShoppingCart
 
       validates :type, :first_name, :last_name, :address, :city, :zip, :country,
                 :phone, presence: true, if: :need_shipping_address?
-      validates :type, inclusion: { in: %w(BillingAddress ShippingAddress) }
+      validates :type, inclusion: { in: %w(ShoppingCart::BillingAddress ShoppingCart::ShippingAddress) }
       validates :first_name, :last_name,
                 format: { with: /\A[a-zA-Z]+\z/,
                           message: I18n.t('shopping_cart.models.forms.address_form.only_letters') },
@@ -38,7 +38,7 @@ module ShoppingCart
                 length: { maximum: 15 }, if: :need_shipping_address?
 
       def need_shipping_address?
-        return if type == 'ShippingAddress' && context.use_billing_address_as_shipping
+        return if type == 'ShoppingCart::ShippingAddress' && context.use_billing_address_as_shipping
         true
       end
     end
