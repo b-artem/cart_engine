@@ -1,20 +1,20 @@
 en:
+  number:
+    currency:
+      format:
+        unit:      "€"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format:    "%u%n"
+  time:
+    formats:
+      date_long: "%B %e, %Y"
+      date_short: "%Y-%m-%d"
+      date_slashes: "%d/%m/%y"
   shopping_cart:
     application:
       translation_not_available: "%{locale} translation not available"
-    number:
-      currency:
-        format:
-          unit:      "€"
-          precision: 2
-          separator: "."
-          delimiter: ","
-          format:    "%u%n"
-    time:
-      formats:
-        date_long: "%B %e, %Y"
-        date_short: "%Y-%m-%d"
-        date_slashes: "%d/%m/%y"
     layouts:
       application:
         home: 'Home'
@@ -163,7 +163,7 @@ en:
           order_total: 'Order Total:'
         save_and_continue: 'Save and Continue'
         line_item:
-          book: 'Book'
+          product: 'Product'
           price: 'Price'
           quantity: 'Quantity'
           total: 'Total'
