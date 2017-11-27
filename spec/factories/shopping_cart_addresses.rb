@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :shopping_cart_address, class: 'ShoppingCart::Address' do
-    type { %w(BillingAddress ShippingAddress).sample }
+    type { %w(ShoppingCart::BillingAddress ShoppingCart::ShippingAddress).sample }
     first_name { Faker::Name.first_name.tr("' ", '') }
     last_name { Faker::Name.last_name.tr("' ", '') }
     address { Faker::Address.street_address.tr("'", '') }

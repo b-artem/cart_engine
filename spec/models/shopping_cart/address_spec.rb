@@ -15,7 +15,7 @@ module ShoppingCart
 
     context 'ActiveModel validations' do
       it { is_expected.to validate_inclusion_of(:type)
-          .in_array(%w(BillingAddress ShippingAddress)) }
+          .in_array(%w(ShoppingCart::BillingAddress ShoppingCart::ShippingAddress)) }
     end
   end
 end
