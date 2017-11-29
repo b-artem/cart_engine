@@ -4,28 +4,7 @@ require 'support/devise'
 
 module ShoppingCart
   shared_examples 'item view' do
-    before :all do
-      RSpec.configure do |config|
-        config.mock_with :rspec do |mocks|
-          mocks.verify_partial_doubles = false
-        end
-      end
-    end
-
-    after :all do
-      RSpec.configure do |config|
-        config.mock_with :rspec do |mocks|
-          mocks.verify_partial_doubles = true
-        end
-      end
-    end
-
     let(:product) { create :product }
-    background do
-      allow_any_instance_of(ShoppingCart.product_class)
-        .to receive_message_chain('images.[].image_url.file.url')
-        .and_return('https://example.com/image.jpg')
-    end
 
     # context 'when user clicks Cart icon in top right corner' do
     #   background { visit home_index_path }

@@ -29,22 +29,6 @@ module ShoppingCart
   end
 
   feature 'Checkout Payment step' do
-    before :all do
-      RSpec.configure do |config|
-        config.mock_with :rspec do |mocks|
-          mocks.verify_partial_doubles = false
-        end
-      end
-    end
-
-    after :all do
-      RSpec.configure do |config|
-        config.mock_with :rspec do |mocks|
-          mocks.verify_partial_doubles = true
-        end
-      end
-    end
-
     let!(:user) { create :user }
     let(:billing_address) { build :shopping_cart_billing_address }
     let(:shipping_address) { build :shopping_cart_shipping_address }
@@ -67,9 +51,6 @@ module ShoppingCart
       payment_fields.each do |field|
         page.set_rack_session(field => payment_info.public_send(field))
       end
-      allow_any_instance_of(ShoppingCart.product_class)
-        .to receive_message_chain('images.[].image_url.thumb.file.url')
-        .and_return("https://example.com/image.jpg")
       allow_any_instance_of(ShoppingCart.product_class)
         .to receive_message_chain('decorate.short_description')
         .and_return('Short description')

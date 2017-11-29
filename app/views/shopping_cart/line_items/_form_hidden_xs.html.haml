@@ -2,7 +2,7 @@
   %td
     .general-img-wrap-table
       = link_to product_path(line_item.product), id: "photo-view-#{line_item.product.id}" do
-        = image_tag line_item.product.images[0].image_url.file.url,
+        = image_tag line_item.product.cover_image,
                     alt: "design-product", class: 'cart-img-shadow pull-left'
   %td
     = link_to product_path(line_item.product), class: 'mb-20', id: "title-view-#{line_item.product.id}" do

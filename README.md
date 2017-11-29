@@ -4,8 +4,8 @@ Short description and motivation.
 ## Usage
 In order to use this engine, your app should have classes that represent users
 and products.
-User should implement #email method.
-Product should implement #title, #price #decorate.short_description methods.
+User have to implement #email method.
+Product have to implement #title, #price, #cover_image, #decorate.short_description methods.
 You can name these classes whatever you want, although you need to define
 user_class and product_class in `app/config/initializers/shopping_cart.rb`, e.g.:
 ```ruby

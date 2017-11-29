@@ -23,12 +23,7 @@ module ShoppingCart
 
     let!(:cart) { create :shopping_cart_cart, line_items:
                   [create(:shopping_cart_line_item, cart: ShoppingCart::Cart.last)] }
-    background do
-      page.set_rack_session(cart_id: cart.id)
-      allow_any_instance_of(ShoppingCart.product_class)
-        .to receive_message_chain('images.[].image_url.file.url')
-        .and_return('https://example.com/image.jpg')
-    end
+    background { page.set_rack_session(cart_id: cart.id) }
 
     context 'when user clicks Checkout button' do
       context 'when user is logged in' do

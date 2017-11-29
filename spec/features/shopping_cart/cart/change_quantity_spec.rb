@@ -4,29 +4,8 @@ require 'support/devise'
 
 module ShoppingCart
   shared_examples 'changes quantity' do
-    before :all do
-      RSpec.configure do |config|
-        config.mock_with :rspec do |mocks|
-          mocks.verify_partial_doubles = false
-        end
-      end
-    end
-
-    after :all do
-      RSpec.configure do |config|
-        config.mock_with :rspec do |mocks|
-          mocks.verify_partial_doubles = true
-        end
-      end
-    end
-
     let(:product) { create :product }
-    background do
-      allow_any_instance_of(ShoppingCart.product_class)
-        .to receive_message_chain('images.[].image_url.file.url')
-        .and_return("https://example.com/image.jpg")
-      visit main_app.root_path
-    end
+    background { visit main_app.root_path }
 
     context 'when product quantity = 1', js: true do
       let(:line_item) { create(:shopping_cart_line_item, cart: ShoppingCart::Cart.last, product: product) }
