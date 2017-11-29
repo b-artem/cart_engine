@@ -2,10 +2,9 @@
   .general-cart-item.divider-lg
     - line_items.each do |line_item|
       .general-img-wrap-table
-        = image_tag line_item.product.images[0].image_url.thumb.file.url,
-                    alt: "design-product"
+        = image_tag line_item.product.cover_image, alt: "design-product"
       %p.title= line_item.product.title
-      %P.in-grey-600.fw-300= line_item.product.decorate.short_description(200)
+      %P.in-grey-600.fw-300= line_item.product.short_description
       %table.table
         %tr
           %td
@@ -41,11 +40,11 @@
         %tr
           %td
             .general-img-wrap-table
-              = image_tag line_item.product.images[0].image_url.thumb.file.url,
+              = image_tag line_item.product.cover_image,
                           class: 'cart-img-shadow pull-left', alt: "design-product"
           %td
             %p.title= line_item.product.title
-            %p.in-grey-600.fw-300= line_item.product.decorate.short_description(200)
+            %p.in-grey-600.fw-300= line_item.product.short_description
           %td
             %span.font-16.in-gold-500= line_item.decorate.price
           %td

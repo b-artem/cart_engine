@@ -51,9 +51,6 @@ module ShoppingCart
       payment_fields.each do |field|
         page.set_rack_session(field => payment_info.public_send(field))
       end
-      allow_any_instance_of(ShoppingCart.product_class)
-        .to receive_message_chain('decorate.short_description')
-        .and_return('Short description')
       visit(shopping_cart.order_checkout_index_path(order) + '/confirm')
     end
 
