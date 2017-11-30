@@ -1,5 +1,3 @@
-# require 'rails_helper'
-
 module ShoppingCart
   RSpec.describe ShippingMethod, type: :model do
     let(:shipping_method) { build :shopping_cart_shipping_method }

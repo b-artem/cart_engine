@@ -1,5 +1,3 @@
-# require 'rails_helper'
-
 module ShoppingCart
   RSpec.describe Order, type: :model do
     let(:order) { build :shopping_cart_order }

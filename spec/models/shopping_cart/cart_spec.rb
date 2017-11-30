@@ -1,4 +1,4 @@
-# require 'rails_helper'
+require 'rails_helper'
 
 module ShoppingCart
   RSpec.describe Cart, type: :model do
@@ -9,9 +9,7 @@ module ShoppingCart
     end
 
     describe 'Associations' do
-      it 'has_many :line_items' do
-        expect(cart).to have_many(:line_items).dependent(:destroy)
-      end
+      it { is_expected.to have_many(:line_items).dependent(:destroy) }
     end
 
     describe 'Instance methods' do

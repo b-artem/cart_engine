@@ -22,6 +22,13 @@ include ShoppingCart::Concerns::Controllers::ApplicationController
 include ShoppingCart::Concerns::Models::User
 ```
 
+5. Engine expects your application to call flash[:notice] and flash[:alert] as appropriate
+to show notifications. For example, in your application layout:
+```ruby
+%p#notice= notice
+%p#alert= alert
+```
+
 ## Installation
 Add this line to your application's Gemfile:
 

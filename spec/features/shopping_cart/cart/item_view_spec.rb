@@ -1,5 +1,5 @@
 require 'rails_helper'
-# require 'support/capybara'
+require 'support/capybara'
 require 'support/devise'
 
 module ShoppingCart

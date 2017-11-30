@@ -1,5 +1,5 @@
 require_dependency "shopping_cart/application_controller"
-require_relative '../../../services/order_service'
+require_relative '../../../services/shopping_cart/order_service'
 
 module ShoppingCart
   class Orders::OrdersController < ApplicationController

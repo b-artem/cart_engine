@@ -3,8 +3,6 @@ require 'rectify'
 module ShoppingCart
   module Forms
     class OrderForm < Rectify::Form
-      # attribute :billing_address, Forms::BillingAddressForm
-      # attribute :shipping_address, Forms::ShippingAddressForm
       attribute :billing_address, BillingAddressForm
       attribute :shipping_address, ShippingAddressForm
       attribute :use_billing_address_as_shipping, Boolean
@@ -16,7 +14,6 @@ module ShoppingCart
         return false unless valid?
         Order.find(id).update_attributes(use_billing_address_as_shipping:
                                           use_billing_address_as_shipping)
-        # Should not work!!!
         Order.find(id).billing_address = Address.create(billing_address.attributes)
         unless use_billing_address_as_shipping
           Order.find(id).shipping_address = Address.create(shipping_address.attributes)
