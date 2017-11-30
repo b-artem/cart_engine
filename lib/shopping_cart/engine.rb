@@ -11,7 +11,8 @@ require 'sass-rails'
 require 'simple_form'
 require 'turbolinks'
 require 'wicked'
-require_relative '../../app/models/shopping_cart/concerns/user'
+require_relative '../concerns/controllers/application_controller'
+require_relative '../concerns/models/user'
 
 module ShoppingCart
   class Engine < ::Rails::Engine

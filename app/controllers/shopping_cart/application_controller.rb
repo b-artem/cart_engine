@@ -1,7 +1,7 @@
 module ShoppingCart
   class ApplicationController < ::ApplicationController
     protect_from_forgery with: :exception
-    include ShoppingCart::Concerns::Controllers::ApplicationController
+    include Concerns::Controllers::ApplicationController
 
     def current_ability
       @current_ability ||= Ability.new(current_user, session)
