@@ -6,16 +6,6 @@ module ShoppingCart
   shared_examples 'item view' do
     let(:product) { create :product }
 
-    # context 'when user clicks Cart icon in top right corner' do
-    #   background { visit home_index_path }
-    #   scenario 'Cart page opens' do
-    #     click_link 'cart'
-    #     expect(page).to have_text(t('carts.show.cart'))
-    #     expect(page).to have_text(t('carts.show.enter_coupon'))
-    #     expect(page).to have_button(t('carts.show.checkout'))
-    #   end
-    # end
-
     context 'when user wants to see Product details' do
       background do
         visit main_app.root_path
@@ -23,12 +13,12 @@ module ShoppingCart
         visit shopping_cart.cart_path(ShoppingCart::Cart.last)
       end
 
-      # context 'user clicks Photo' do
-      #   scenario 'Product view page opens' do
-      #     click_link product_path(product)#"/shopping_cart/carts/photo-view-#{product.id}"
-      #     expect(current_path).to eq product_path(product)
-      #   end
-      # end
+      context 'user clicks Photo' do
+        scenario 'Product view page opens' do
+          click_link "photo-view-#{product.id}"
+          expect(current_path).to eq product_path(product)
+        end
+      end
 
       context 'user clicks Title' do
         scenario 'Product view page opens' do

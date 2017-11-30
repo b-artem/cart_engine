@@ -13,7 +13,8 @@ module ShoppingCart
               ShoppingCart::Order.find(session[:order_id])
             end
           rescue ActiveRecord::RecordNotFound
-            flash[:alert] = t('order_was_not_found', order_id: session[:order_id])
+            flash[:alert] = t('shopping_cart.order_was_not_found',
+                              order_id: session[:order_id])
           end
 
           def empty_current_order
